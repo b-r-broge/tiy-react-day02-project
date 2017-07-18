@@ -1,23 +1,46 @@
 // CLASSES PROJECT
-// In this project, you will build a Mazda car factory that manufactures both cars and trucks.
-// Read each set of instructions carefully!
+// In this project, you will build a Mazda car factory that manufactures both
+// cars and trucks. Read each set of instructions carefully!
 
 // BUILD YOUR FACTORY!
 
 // DECLARE A FACTORY CLASS
-// All automobiles manufacutered should have the following properties: make (Mazda), location (USA), airbags (true), abs (true), warranty (60,000 miles / 3 years)
+// All automobiles manufacutered should have the following properties:
+//    make (Mazda), location (USA), airbags (true), abs (true),
+//    warranty (60,000 miles / 3 years)
 // This factory should also run two functions: massBuild() and customerBuild()
 
 // massBuild should receive the following parameters: quantity, options.
-// It should print "Building QUANTITY COLOR TRIM MODEL's" i.e: "Building 100 blue Touring CX-5's"
+// It should print "Building QUANTITY COLOR TRIM MODEL's"
+// i.e: "Building 100 blue Touring CX-5's"
 
 // customerBuild should receive the following parameters: color, options.
-// It should print "Building one COLOR TRIM MODEL with the following options: OPTIONS", i.e: "Building one red Sport Mazda3 with the following options: heated seats, rear spoiler"
+// It should print "Building one COLOR TRIM MODEL with the following options:
+//    OPTIONS", i.e: "Building one red Sport Mazda3 with the following options:
+//      heated seats, rear spoiler"
 
 // Create the Factory class bellow:
 
+class Factory {
+  constructor() {
+    this.make = 'Mazda';
+    this.location = 'USA';
+    this.airbags = true;
+    this.abs = true;
+    this.warranty = '60,000 miles / 3 years';
+    this.trim = "";
+    this.color = "";
+    this.model = "";
 
+    this.massBuild = function (quantity, options) {
+      return console.log(`Building ${quantity} ${this.color} ${this.trim} ${this.model} ${options}`)
+    }
 
+    this.customerBuild = function (options) {
+      return console.log(`Building one ${this.color} ${this.trim} ${this.model} with the following options: ${options}`)
+    }
+  }
+}
 
 // CREATE A SUB-CLASS CALLED CAR
 // It should extend from Factory.
@@ -26,7 +49,12 @@
 // Car should also have the following additional properties: enginesize (4), navigation (true), backupcamera (true), warranty (100,000 miles / 5 years)
 // Write your code below:
 
-
+class Car extends Factory {
+  constructor () {
+    super();
+    this.model = ""
+  }
+}
 
 
 // CREATE A SUB-CLASS CALLED SPORT
